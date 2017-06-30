@@ -1,42 +1,32 @@
 <template>
     <div>
+      {{searchName}}
+      <h2 v-show="firstView">Enter search your name</h2>
+      <h2 v-show="loading">loading</h2>
+      <h2 v-show="errorMsg">{{errorMsg}}</h2>
       <div class="row">
-        <div class="card">
-          <a href="https://github.com/reactjs" target="_blank">
-            <img src="https://avatars.githubusercontent.com/u/6412038?v=3" style='width: 100px'/>
+       <!-- <div class="card">
+          <a :href="user.html_url" target="_blank">
+            <img src="user.avatar_url" style='width: 100px'/>
           </a>
-          <p class="card-text">reactjs</p>
-        </div>
-        <div class="card">
-          <a href="https://github.com/reactjs" target="_blank">
-            <img src="https://avatars.githubusercontent.com/u/6412038?v=3" style='width: 100px'/>
-          </a>
-          <p class="card-text">reactjs</p>
-        </div>
-        <div class="card">
-          <a href="https://github.com/reactjs" target="_blank">
-            <img src="https://avatars.githubusercontent.com/u/6412038?v=3" style='width: 100px'/>
-          </a>
-          <p class="card-text">reactjs</p>
-        </div>
-        <div class="card">
-          <a href="https://github.com/reactjs" target="_blank">
-            <img src="https://avatars.githubusercontent.com/u/6412038?v=3" style='width: 100px'/>
-          </a>
-          <p class="card-text">reactjs</p>
-        </div>
-        <div class="card">
-          <a href="https://github.com/reactjs" target="_blank">
-            <img src="https://avatars.githubusercontent.com/u/6412038?v=3" style='width: 100px'/>
-          </a>
-          <p class="card-text">reactjs</p>
-        </div>
+          <p class="card-text">{{user.login}}</p>
+        </div>-->
       </div>
     </div>
 </template>
 
 <script>
-    export default{}
+    export default{
+        props:['searchName'],
+      data(){
+            return{
+              firstView : true,
+              loading :  false,
+              users : null,
+              errorMsg : null
+            }
+      }
+    }
 
 </script>
 
